@@ -24,6 +24,6 @@ python -u quantize_mobilenet.py train --dataset $DATASET_PATH --train-dir $QUANT
   --warm-start $PRUNED_CHECKPOINT --num-bits-pointwise 6 --num-bits-depthwise 6 --num-bits-dense 5 --use-codebook
 ```
 By default this function uses a simple linear discretization, but better performance can be obtained by using a trained codebook.
-We also observe that there the weights in the final fully connected layers are more tolerant to discretization. Finally, note
+We also observe that the weights in the final fully connected layers are more tolerant to discretization. Finally, note
 that you may need to edit the model definition to use a smaller momentum for batch normalization unless you wish to train
 quantization for extended period of times as the moving statistics of the batch normalization may not adjust fast enough.
