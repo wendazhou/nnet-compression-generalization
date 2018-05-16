@@ -5,6 +5,12 @@ in our paper: Compressibility and Generalization in Large-Scale Deep Learning
 (Wenda Zhou, Victor Veitch, Morgane Austern, Ryan P. Adams and Peter Orbanz).
 
 
+## LeNet-5 pruning
+
+The directory [compression_lenet](https://github.com/wendazhou/nnet-compression-generalization/tree/master/scripts/compression_lenet/)
+contais the scripts which implement the training, pruning, quantization and evaluation of the LeNet-5 network.
+
+
 ## MobileNet Pruning
 
 The directory [compression-mobilenet](https://github.com/wendazhou/nnet-compression-generalization/tree/master/scripts/compression-mobilenet)
@@ -13,7 +19,8 @@ The typical compression pipeline would be to take an already trained network (su
 and prune then quantize the network. Please see the [readme](https://github.com/wendazhou/nnet-compression-generalization/blob/master/scripts/compression-mobilenet/README.md)
 for more details on compressing MobileNet.
 
-## Label randomization and pruning
+## CIFAR-10 randomization tests
 
 The directory [randomization-cifar](https://github.com/wendazhou/nnet-compression-generalization/tree/master/scripts/randomization-cifar)
-contains the scripts which implement the training and pruning of a ResNet on a randomized version of the CIFAR-10 dataset.
+contains the scripts which implement the training and pruning of a ResNet-56 on the CIFAR-10 dataset
+with a portion of the labels randomized.

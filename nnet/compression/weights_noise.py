@@ -46,8 +46,7 @@ def apply_noise(weight, scale, scale_min_max=False, mask=False, name=None):
             variable_abs = tf.abs(weight)
             variable_value = tf.where(
                 tf.not_equal(variable_abs, 0.0),
-                variable_abs,
-                1e6 * tf.ones_like(variable_abs))
+                variable_abs, 1e6 * tf.ones_like(variable_abs))
 
             max_bound_init_val = tf.reduce_max(variable_abs, name='max_value')
             min_bound_init_val = tf.minimum(
