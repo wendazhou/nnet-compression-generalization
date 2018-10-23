@@ -78,7 +78,8 @@ def _make_thresh_fn(target_iterations, update_steps):
     def _thresh_fn(variable, mask):
         thresh_fn = percentile_thresh_fn(
             1 - target_sparsities[variable.op.name],
-            target_iterations, update_steps)
+            target_iterations, update_steps,
+            thresh_lower_scale=1)
 
         return thresh_fn(variable, mask)
     
@@ -150,7 +151,7 @@ def main():
     def mnist_input_fn(batch_size, n_epochs=None):
         return make_input_fn(
             mnist_data.get_split(args.dataset_path, 'train'),
-            normalize_preprocessing.preprocess,
+            partial(normalize_preprocessing.preprocess, center=True),
             image_size=28,
             batch_size=batch_size,
             n_epochs=n_epochs)

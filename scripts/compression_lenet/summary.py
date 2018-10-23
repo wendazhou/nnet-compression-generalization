@@ -65,19 +65,19 @@ smooth and sym: {2}
 
     bound_raw = pac_bayes_bound_opt(
         complexity_raw,
-        1 - 0.995,
+        1 - 0.985,
         60000
     )
 
     bound_smoothed = pac_bayes_bound_opt(
         complexity_smoothed,
-        1 - 0.995,
+        1 - 0.985,
         60000
     )
 
     bound_both = pac_bayes_bound_opt(
         complexity_smooth_sym,
-        1 - 0.995,
+        1 - 0.985,
         60000
     )
 
